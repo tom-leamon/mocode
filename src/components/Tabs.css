@@ -1,0 +1,9 @@
+.tabs {
+  display: flex;
+  height: 36px;
+}
+
+button {
+  width: 25%;
+  height: 100%;
+}
