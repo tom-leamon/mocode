@@ -22,10 +22,10 @@ const Result = ({tab, html, css, js}) => {
           <html>
             <head>
               ${css && `<link rel="stylesheet" type="text/css" href="${cssURL}" />`}
-              ${js && `<script src="${jsURL}"></script>`}
             </head>
             <body>
               ${html || ''}
+              ${js && `<script src="${jsURL}"></script>`}
             </body>
           </html>
         `
@@ -33,20 +33,9 @@ const Result = ({tab, html, css, js}) => {
         return getBlobURL(source, 'text/html')
       }
       
-      const url = getGeneratedPageURL({
-        html,
-        css,
-        js
-      })
+      const url = getGeneratedPageURL({html, css, js})
 
       iframe.current.src = url
-
-
-      // iframe.current.contentWindow.document.body.innerHTML = `
-      //   ${html}
-      //   <style>${css}</style>
-      //   <script>${js}</script>
-      // `
     }
   }, [html, css, js])
 

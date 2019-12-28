@@ -6,6 +6,9 @@
   display: block;
 }
 
+.editor {
+}
+
 
 /* Syntax highlighting */
 .token.comment,
