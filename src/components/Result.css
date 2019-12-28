@@ -8,5 +8,10 @@
 }
 
 iframe {
+  border: none;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  height: calc(100% - 24px);
   background: white;
 }

@@ -4,9 +4,11 @@
 
 .visible {
   display: block;
+  height: calc(100% - 24px);
 }
 
 .editor {
+  height: 100%;
 }
 
 

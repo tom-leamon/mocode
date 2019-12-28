@@ -23,7 +23,9 @@ const Code = ({type, tab, callback}) => {
       case 'html':
         return (
           <Editor
+            id='html'
             className='editor'
+            padding={8}
             value={currentCode}
             onValueChange={code => setCurrentCode(code)}
             highlight={code => highlight(code, languages.markup)}
@@ -32,7 +34,9 @@ const Code = ({type, tab, callback}) => {
       case 'css':
         return (
           <Editor
+            id='css'
             className='editor'
+            padding={8}
             value={currentCode}
             onValueChange={code => setCurrentCode(code)}
             highlight={code => highlight(code, languages.css)}
@@ -41,7 +45,9 @@ const Code = ({type, tab, callback}) => {
       case 'js':
         return (
           <Editor
+            id='js'
             className='editor'
+            padding={8}
             value={currentCode}
             onValueChange={code => setCurrentCode(code)}
             highlight={code => highlight(code, languages.javascript)}

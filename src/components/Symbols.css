@@ -1,0 +1,19 @@
+.symbols {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.symbol {
+  cursor: pointer;
+  text-align: center;
+  height: 24px;
+  width: 8.33%;
+  background: #505050;
+  border-radius: 0px;
+}

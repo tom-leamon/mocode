@@ -5,29 +5,22 @@ import React, { useState, useEffect } from 'react';
 import Code from './components/Code'
 import Tabs from './components/Tabs'
 import Result from './components/Result'
+import Symbols from './components/Symbols'
 
 const App = () => {
   const [tab, setTab] = useState('html')
   const [html, setHtml] = useState('')
   const [css, setCss] = useState('')
   const [js, setJs] = useState('')
-  const [code, setCode] = useState({
-    html: '',
-    css: '',
-    js: ''
-  })
-
-  useEffect(() => {
-    setCode({ html, css, js })
-  }, [html, css, js])
 
   return (
-    <div>
-      <Tabs callback={setTab} />
+    <div className='app'>
+      <Tabs callback={setTab} activeTab={tab} />
       <Code type='html' tab={tab} callback={setHtml} />
       <Code type='css' tab={tab} callback={setCss} />
       <Code type='js' tab={tab} callback={setJs} /> 
       <Result tab={tab} html={html} css={css} js={js} />
+      <Symbols tab={tab}/>
     </div> 
   )
   
