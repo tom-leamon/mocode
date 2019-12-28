@@ -1,6 +1,6 @@
 import './Code.css'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Editor from 'react-simple-code-editor';
 import { highlight, languages } from 'prismjs/components/prism-core';
 import 'prismjs/components/prism-clike';
@@ -8,17 +8,22 @@ import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-css';
 import 'prismjs/components/prism-markup';
 
-const Code = ({type, tab}) => {
+const Code = ({type, tab, callback}) => {
 
   const [currentCode, setCurrentCode] = useState('')
 
   const visible = tab === type
+
+  useEffect(() => {
+    callback(currentCode)
+  }, [currentCode])
 
   const renderEditor = () => {
     switch(type) {
       case 'html':
         return (
           <Editor
+            className='editor'
             value={currentCode}
             onValueChange={code => setCurrentCode(code)}
             highlight={code => highlight(code, languages.markup)}
@@ -27,6 +32,7 @@ const Code = ({type, tab}) => {
       case 'css':
         return (
           <Editor
+            className='editor'
             value={currentCode}
             onValueChange={code => setCurrentCode(code)}
             highlight={code => highlight(code, languages.css)}
@@ -35,6 +41,7 @@ const Code = ({type, tab}) => {
       case 'js':
         return (
           <Editor
+            className='editor'
             value={currentCode}
             onValueChange={code => setCurrentCode(code)}
             highlight={code => highlight(code, languages.javascript)}

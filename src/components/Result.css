@@ -1,0 +1,12 @@
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+  color: white;
+}
+
+iframe {
+  background: white;
+}
