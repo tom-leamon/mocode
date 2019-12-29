@@ -36,12 +36,17 @@ const Result = ({tab, html, css, js}) => {
       const url = getGeneratedPageURL({html, css, js})
 
       iframe.current.src = url
+
+      iframe.current.contentWindow.onerror = function(){
+        // handle error
+        console.log('error')
+    }
     }
   }, [html, css, js])
 
   return (
-    <div className={visible ? 'visible' : 'hidden'}>
-     <iframe ref={iframe}></iframe>
+    <div className={visible ? 'show' : 'hidden'}>
+     <iframe ref={iframe} id='iframe'></iframe>
     </div>
   ) 
 }

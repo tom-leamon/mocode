@@ -8,15 +8,32 @@ import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-css';
 import 'prismjs/components/prism-markup';
 
+import Symbols from './Symbols'
+
 const Code = ({type, tab, callback}) => {
 
-  const [currentCode, setCurrentCode] = useState('')
+  const [currentCode, setCurrentCode] = useState(
+    JSON.parse(localStorage.getItem(type)) || ''
+  )
 
   const visible = tab === type
 
   useEffect(() => {
+    localStorage.setItem(type, JSON.stringify(currentCode))
     callback(currentCode)
   }, [currentCode])
+
+  const insertSymbol = (symbol) => {
+    const el = document.querySelector(`#${tab} textarea`)
+    const start = el.selectionStart
+    const end = el.selectionEnd
+    const text = el.value
+    const before = text.substring(0, start)
+    const after  = text.substring(end, text.length)
+    setCurrentCode(before + symbol + after)
+    el.selectionStart = el.selectionEnd = start + symbol.length
+    el.focus()
+  }
 
   const renderEditor = () => {
     switch(type) {
@@ -58,10 +75,10 @@ const Code = ({type, tab, callback}) => {
 
   return (
     <div className={visible ? 'visible' : 'hidden'}>
+      <Symbols className='symbols' insertSymbol={insertSymbol} />
       { renderEditor() }
     </div>
   )
-  
 }
 
 export default Code

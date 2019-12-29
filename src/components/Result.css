@@ -2,9 +2,10 @@
   display: none;
 }
 
-.visible {
+.show {
   display: block;
   color: white;
+  height: 100%;
 }
 
 iframe {
@@ -12,6 +13,6 @@ iframe {
   display: flex;
   flex-grow: 1;
   width: 100%;
-  height: calc(100% - 24px);
+  height: 100%;
   background: white;
 }

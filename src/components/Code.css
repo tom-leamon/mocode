@@ -4,13 +4,21 @@
 
 .visible {
   display: block;
-  height: calc(100% - 24px);
+  height: 100%;
+  overflow: auto;
+  margin-top: 48px;
+}
+
+.symbols {
+  position: absolute;
+  top: 48px;
 }
 
 .editor {
-  height: 100%;
+  
+  min-height: 100%;
+  font-size: 18px;
 }
-
 
 /* Syntax highlighting */
 .token.comment,

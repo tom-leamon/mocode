@@ -1,8 +1,6 @@
 .symbols {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  background: white;
+  background: #303030;
   color: black;
   display: flex;
   align-items: center;
@@ -10,10 +8,11 @@
 }
 
 .symbol {
+  color: white;
   cursor: pointer;
   text-align: center;
-  height: 24px;
-  width: 8.33%;
-  background: #505050;
+  height: auto;
+  padding: 8px;
   border-radius: 0px;
+  font-size: 24px;
 }

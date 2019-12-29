@@ -5,7 +5,6 @@ import React, { useState, useEffect } from 'react';
 import Code from './components/Code'
 import Tabs from './components/Tabs'
 import Result from './components/Result'
-import Symbols from './components/Symbols'
 
 const App = () => {
   const [tab, setTab] = useState('html')
@@ -20,7 +19,6 @@ const App = () => {
       <Code type='css' tab={tab} callback={setCss} />
       <Code type='js' tab={tab} callback={setJs} /> 
       <Result tab={tab} html={html} css={css} js={js} />
-      <Symbols tab={tab}/>
     </div> 
   )
   

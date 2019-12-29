@@ -1,6 +1,6 @@
 .tabs {
   display: flex;
-  height: 36px;
+  height: 48px;
 }
 
 button {
@@ -12,8 +12,9 @@ button {
   border-radius: 8px 8px 0px 0px;
   transition: .4s;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .active {
-  background: #505050;
+  background: #303030;
 }

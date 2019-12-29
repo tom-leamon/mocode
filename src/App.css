@@ -3,12 +3,17 @@ html {
   box-sizing: border-box;
   background: black;
   color: white;
+  font-family: monospace;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+:focus {
+  outline:none;
 }
 
 html,
@@ -19,22 +24,15 @@ body,
 }
 
 body {
-  font-family: 'Fira code', 'Fira Mono', Consolas, Menlo, Courier, monospace;
   font-size: 14px;
   line-height: 1.5;
   margin: 0;
   padding: 0;
 }
 
-/* App */
-
-html, body {
-  height: 100%;
-}
-
 .app {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100% - 24px);
+  height: 100%;
 }
