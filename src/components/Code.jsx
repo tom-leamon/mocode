@@ -11,7 +11,6 @@ import 'prismjs/components/prism-markup';
 import Symbols from './Symbols'
 
 const Code = ({type, tab, callback}) => {
-
   const [currentCode, setCurrentCode] = useState(
     JSON.parse(localStorage.getItem(type)) || ''
   )
@@ -22,7 +21,7 @@ const Code = ({type, tab, callback}) => {
     localStorage.setItem(type, JSON.stringify(currentCode))
     callback(currentCode)
   }, [currentCode])
-
+  
   const insertSymbol = (symbol) => {
     const el = document.querySelector(`#${tab} textarea`)
     const start = el.selectionStart
