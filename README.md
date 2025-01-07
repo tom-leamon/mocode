@@ -1,3 +1,3 @@
 ## Try it out
 
-[Mocode Website](https://mocode.netlify.com/)
+[Mocode Website](https://mocode.nuvotion.live/)
